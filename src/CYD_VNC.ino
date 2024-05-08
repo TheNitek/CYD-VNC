@@ -82,10 +82,10 @@ void loop() {
             }
             lastUpdateR = 0;
         } else {
-            if(lastUpdateR == 0) {
+            if(lastUpdateR == 0 && lastUpdateP != 0) {
                 vnc.mouseEvent(lx, ly, 0b000);
                 lastUpdateR = millis();
-                Serial.printf("[Touch] press: 0 X: %d Y: %d\n", lx, ly);
+                Serial.printf("[Touch] release: 0 X: %d Y: %d\n", lx, ly);
             }
             lastUpdateP = 0;
         }
